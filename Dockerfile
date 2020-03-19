@@ -8,6 +8,6 @@ FROM alpine:3.7
 RUN apk add --no-cache ca-certificates
 COPY --from=0 /bin/drone-s3 /bin/drone-s3
 
-COPY scripts/entrypoint.sh .
+COPY entrypoint.sh .
 
 ENTRYPOINT [ "./entrypoint.sh" ]

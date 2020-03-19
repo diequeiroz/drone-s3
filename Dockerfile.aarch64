@@ -4,6 +4,6 @@ ENV GODEBUG=netdns=go
 ADD contrib/mime.types /etc/
 ADD release/linux/arm64/drone-s3 /bin/
 
-COPY scripts/entrypoint.sh .
+COPY entrypoint.sh .
 
 ENTRYPOINT [ "./entrypoint.sh" ]
