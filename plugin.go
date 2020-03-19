@@ -97,10 +97,6 @@ func (p *Plugin) Exec() error {
 	}
 
 	//Allowing to use the instance role or provide a key and secret
-	// if p.Key != "" && p.Secret != "" {
-	// 	conf.Credentials = credentials.NewStaticCredentials(p.Key, p.Secret, "")
-	// }
-	// Removed the above block since drone-s3 uses the oficial S3 plugin, which has it's own chain to decide which credential to use
 	client := s3.New(session.New(), conf)
 
 	// find the bucket
