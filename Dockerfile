@@ -7,4 +7,10 @@ RUN GOOS=linux CGO_ENABLED=0 go build -o /bin/drone-s3 \
 FROM alpine:3.7
 RUN apk add --no-cache ca-certificates
 COPY --from=0 /bin/drone-s3 /bin/drone-s3
-ENTRYPOINT ["/bin/drone-s3"]
+
+RUN apk update && \
+    apk add git python py-pip curl && \
+    pip install awscli
+COPY entrypoint.sh .
+
+ENTRYPOINT [ "/entrypoint.sh" ]
