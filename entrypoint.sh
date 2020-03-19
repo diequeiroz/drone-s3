@@ -1,4 +1,4 @@
-#!sh
+#!/bin/sh
 
 role_arn=$AWS_ROLE_ARN
 
@@ -10,4 +10,4 @@ if [ -n "$role_arn" ]; then
     export AWS_SESSION_TOKEN=$(echo $sts | cut -d' ' -f3)
 fi
 
-exec drone-s3 "$@"
+exec /bin/drone-s3 "$@"
