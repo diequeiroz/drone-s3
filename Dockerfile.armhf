@@ -6,4 +6,4 @@ ADD release/linux/arm/drone-s3 /bin/
 
 COPY entrypoint.sh .
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]

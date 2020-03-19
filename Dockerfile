@@ -10,4 +10,4 @@ COPY --from=0 /bin/drone-s3 /bin/drone-s3
 
 COPY entrypoint.sh .
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
