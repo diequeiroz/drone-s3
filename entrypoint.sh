@@ -1,6 +1,7 @@
 #!/bin/sh
 
 role_arn=$AWS_ROLE_ARN
+session_name={$AWS_SESSION_NAME:-$DRONE_REPO}
 
 if [ -n "$role_arn" ]; then
     echo ">>> Assuming role..."
